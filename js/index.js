@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
 fetchMonsters()
 buttonClick()
 createForm()
+
 })
 let currentPage = 1
 
@@ -54,8 +55,7 @@ function eachMonster(monster){
 
 
     
-    //create add event, first display 50 with splice
-    //when click, disply split with next 50
+
 }
 function buttonClick() {
     document.querySelector('#forward').addEventListener('click', () => {
@@ -66,8 +66,12 @@ function buttonClick() {
 
     document.querySelector('#back').addEventListener('click', () => {
         currentPage--
+            if (currentPage < 1) {
+                alert('No more monsters here!')
+            }
         document.querySelector('#monster-container').textContent = ""
         fetchMonsters(currentPage)
+    
     })
 
 }
