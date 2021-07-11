@@ -68,6 +68,7 @@ function buttonClick() {
         currentPage--
             if (currentPage < 1) {
                 alert('No more monsters here!')
+                currentPage = 1
             }
         document.querySelector('#monster-container').textContent = ""
         fetchMonsters(currentPage)
